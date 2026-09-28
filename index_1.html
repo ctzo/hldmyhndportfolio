@@ -1,2 +1,176 @@
-<!DOCTYPE html><html lang="en" style="margin:0;overflow:hidden;background-color:transparent"><head><title>increment</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><style><!--@media(-webkit-device-pixel-ratio:1),(-webkit-device-pixel-ratio:2),(-webkit-device-pixel-ratio:3),(-webkit-device-pixel-ratio:4),(-webkit-min-device-pixel-ratio:5){html{image-rendering:pixelated}}html*{color-scheme:light dark}--></style></head><body style="margin:0;-webkit-user-select:none;user-select:none"><font color="#000" size="0" face="'MS Sans Serif', Arial, sans-serif"><table role="presentation" width="88" height="31" cellspacing="0" cellpadding="0" background="images/bg.gif"><tbody><tr aria-hidden="true" height="4"><td colspan="4"></td></tr><tr height="15" role="presentation"><td aria-hidden="true" width="6"></td><td role="presentation" width="61"><font size="1" style="font-size:14px" face="'MS Sans Serif', Arial, sans-serif"><span style="font-size:0;width:0;height:0;display:inline-block;overflow:hidden">this page has </span>235<span style="font-size:0;width:0;height:0;display:inline-block;overflow:hidden"> increments</span></font></td><td role="presentation" width="15"><form action="/" method="POST" style="width:15px;height:15px;display:block;margin:0"><button type="submit" style="width:100%;height:100%;margin:0;padding:0;border:none;background:transparent;cursor:pointer;cursor:hand" title="increment this page"><span style="font-size:0;width:0;height:0;display:inline-block;overflow:hidden">increment this page</span></button></form></td><td aria-hidden="true" width="4"></td></tr><tr aria-hidden="true"><td colspan="4"></td></tr><tr aria-hidden="true" height="7"><td colspan="4"></td></tr><tr aria-hidden="true" height="2"><td colspan="4"></td></tr></tbody></table></font><script language="javascript"><!--
-var e=document.forms[0].parentElement.parentElement.children[1],t=e.children[0].childNodes[1],n=parseInt(t.data);"undefined"==typeof XMLHttpRequest&&(XMLHttpRequest=function(){return new window.ActiveXObject(navigator.userAgent.indexOf("MSIE 5")>=0?"Microsoft.XMLHTTP":"Msxml2.XMLHTTP")});var f=document.forms[0],o=0,y=0,z=0,l=0,b=0,d=1e3,q,j;function w(){return(new Date).getTime()}function u(v){if(y){y=0;v=parseInt(v);n=isNaN(v)?n-1:v;t.data=""+n;setTimeout(function(){o=0;e.style.color="#000000"},Math.max(0,l+180-w()))}}function x(){var a=new XMLHttpRequest;a.open("POST",f.action,!0);a.onreadystatechange=function(){4==a.readyState&&u(a.responseText)};a.send("xhr=1")}function g(){if(z||q||!window.WebSocket)return;var c,i;try{c=q=new WebSocket(f.action.replace(/^http/,"ws"))}catch(k){q=0;z=1;return}c.onopen=function(){c.h=b=1;d=1e3;y&&c.send("+");i=setInterval(function(){c.send("ping")},3e4)};c.onmessage=function(m){var v=m.data,p;"pong"!=v&&("="==v.charAt(0)?y||isNaN(p=parseInt(v.slice(1)))||(n=p,t.data=""+n):u(v))};c.onclose=function(){clearInterval(i);if(q==c){q=0;y&&(c.h?u(""):(b||(z=1),x()));b&&setTimeout(g,d);d=Math.min(2*d,6e4)}}}function h(){if(q&&!y){var c=q;q=0;c.close()}}function s(){if(!z&&window.WebSocket){if(q&&1==q.readyState)return q.send("+");g();if(q)return}x()}f.onsubmit=function(r){"object"!=typeof r&&(r=event);"function"==typeof r.preventDefault&&r.preventDefault();r.returnValue=!1;if(!o){o=y=1;l=w();n++;t.data=""+n;e.style.color="#808080";clearTimeout(j);j=setTimeout(function(){if(y&&q){var c=q;q=0;c.close();c.h||b||(z=1);x();z||setTimeout(g,d)}},1e4);s()}return!1};if(window.addEventListener){addEventListener("pagehide",h,!1);addEventListener("pageshow",function(r){r.persisted&&g()},!1)}g();// --></script></body></html>
+<!DOCTYPE html>
+<html lang="en" style="margin:0;overflow:hidden;background-color:transparent">
+  <head>
+    <title>increment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      <!--@media(-webkit-device-pixel-ratio:1),(-webkit-device-pixel-ratio:2),(-webkit-device-pixel-ratio:3),(-webkit-device-pixel-ratio:4),(-webkit-min-device-pixel-ratio:5){html{image-rendering:pixelated}}html*{color-scheme:light dark}
+      -->
+    </style>
+  </head>
+  <body style="margin:0;-webkit-user-select:none;user-select:none">
+    <font color="#000" size="0" face="'MS Sans Serif', Arial, sans-serif">
+      <table role="presentation" width="88" height="31" cellspacing="0" cellpadding="0" background="images/bg.gif">
+        <tbody>
+          <tr aria-hidden="true" height="4">
+            <td colspan="4"></td>
+          </tr>
+          <tr height="15" role="presentation">
+            <td aria-hidden="true" width="6"></td>
+            <td role="presentation" width="61">
+              <font size="1" style="font-size:14px" face="'MS Sans Serif', Arial, sans-serif">
+                <span style="font-size:0;width:0;height:0;display:inline-block;overflow:hidden">this page has </span>235 <span style="font-size:0;width:0;height:0;display:inline-block;overflow:hidden"> increments</span>
+              </font>
+            </td>
+            <td role="presentation" width="15">
+              <form action="/" method="POST" style="width:15px;height:15px;display:block;margin:0">
+                <button type="submit" style="width:100%;height:100%;margin:0;padding:0;border:none;background:transparent;cursor:pointer;cursor:hand" title="increment this page">
+                  <span style="font-size:0;width:0;height:0;display:inline-block;overflow:hidden">increment this page</span>
+                </button>
+              </form>
+            </td>
+            <td aria-hidden="true" width="4"></td>
+          </tr>
+          <tr aria-hidden="true">
+            <td colspan="4"></td>
+          </tr>
+          <tr aria-hidden="true" height="7">
+            <td colspan="4"></td>
+          </tr>
+          <tr aria-hidden="true" height="2">
+            <td colspan="4"></td>
+          </tr>
+        </tbody>
+      </table>
+    </font>
+    <script language="javascript">
+      <!--
+      var e = document.forms[0].parentElement.parentElement.children[1],
+        t = e.children[0].childNodes[1],
+        n = parseInt(t.data);
+      "undefined" == typeof XMLHttpRequest && (XMLHttpRequest = function() {
+        return new window.ActiveXObject(navigator.userAgent.indexOf("MSIE 5") >= 0 ? "Microsoft.XMLHTTP" : "Msxml2.XMLHTTP")
+      });
+      var f = document.forms[0],
+        o = 0,
+        y = 0,
+        z = 0,
+        l = 0,
+        b = 0,
+        d = 1e3,
+        q, j;
+
+      function w() {
+        return (new Date).getTime()
+      }
+
+      function u(v) {
+        if (y) {
+          y = 0;
+          v = parseInt(v);
+          n = isNaN(v) ? n - 1 : v;
+          t.data = "" + n;
+          setTimeout(function() {
+            o = 0;
+            e.style.color = "#000000"
+          }, Math.max(0, l + 180 - w()))
+        }
+      }
+
+      function x() {
+        var a = new XMLHttpRequest;
+        a.open("POST", f.action, !0);
+        a.onreadystatechange = function() {
+          4 == a.readyState && u(a.responseText)
+        };
+        a.send("xhr=1")
+      }
+
+      function g() {
+        if (z || q || !window.WebSocket) return;
+        var c, i;
+        try {
+          c = q = new WebSocket(f.action.replace(/^http/, "ws"))
+        } catch (k) {
+          q = 0;
+          z = 1;
+          return
+        }
+        c.onopen = function() {
+          c.h = b = 1;
+          d = 1e3;
+          y && c.send("+");
+          i = setInterval(function() {
+            c.send("ping")
+          }, 3e4)
+        };
+        c.onmessage = function(m) {
+          var v = m.data,
+            p;
+          "pong" != v && ("=" == v.charAt(0) ? y || isNaN(p = parseInt(v.slice(1))) || (n = p, t.data = "" + n) : u(v))
+        };
+        c.onclose = function() {
+          clearInterval(i);
+          if (q == c) {
+            q = 0;
+            y && (c.h ? u("") : (b || (z = 1), x()));
+            b && setTimeout(g, d);
+            d = Math.min(2 * d, 6e4)
+          }
+        }
+      }
+
+      function h() {
+        if (q && !y) {
+          var c = q;
+          q = 0;
+          c.close()
+        }
+      }
+
+      function s() {
+        if (!z && window.WebSocket) {
+          if (q && 1 == q.readyState) return q.send("+");
+          g();
+          if (q) return
+        }
+        x()
+      }
+      f.onsubmit = function(r) {
+        "object" != typeof r && (r = event);
+        "function" == typeof r.preventDefault && r.preventDefault();
+        r.returnValue = !1;
+        if (!o) {
+          o = y = 1;
+          l = w();
+          n++;
+          t.data = "" + n;
+          e.style.color = "#808080";
+          clearTimeout(j);
+          j = setTimeout(function() {
+            if (y && q) {
+              var c = q;
+              q = 0;
+              c.close();
+              c.h || b || (z = 1);
+              x();
+              z || setTimeout(g, d)
+            }
+          }, 1e4);
+          s()
+        }
+        return !1
+      };
+      if (window.addEventListener) {
+        addEventListener("pagehide", h, !1);
+        addEventListener("pageshow", function(r) {
+          r.persisted && g()
+        }, !1)
+      }
+      g(); // 
+      -->
+    </script>
+  </body>
+</html>
