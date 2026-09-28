@@ -1599,9 +1599,9 @@ function setMobileViewText(e) {
 
 function loadViewCounter() {
     let e = document.getElementById("view-counter");
-    fetch("https://views.schuh.wtf", {
-        method: "POST"
-    }).then(e => e.json()).then(t => {
+    fetch("/api/views", {
+    method: "POST"
+}).then(e => e.json()).then(t => {
         let r = t.count,
             a = r.toString();
         if (!/^\d+$/.test(a)) throw Error("Invalid count");
