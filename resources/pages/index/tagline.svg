@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="275" height="13" viewBox="0 0 243 13">
+  <defs>
+    <linearGradient id="rb" gradientUnits="userSpaceOnUse" x1="57.2" y1="0" x2="92.95" y2="0" spreadMethod="repeat">
+      <stop offset="0" stop-color="rgb(150,150,150)"/>
+      <stop offset="0.5" stop-color="rgb(235,235,235)"/>
+      <stop offset="1" stop-color="rgb(150,150,150)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="35.75 0" dur="2.5s" repeatCount="indefinite" calcMode="linear"/>
+    </linearGradient>
+    <linearGradient id="rw" gradientUnits="userSpaceOnUse" x1="193.05" y1="0" x2="243.1" y2="0" spreadMethod="repeat">
+      <stop offset="0" stop-color="rgb(255,35,45)"/>
+      <stop offset="0.5" stop-color="rgb(255,165,170)"/>
+      <stop offset="1" stop-color="rgb(255,35,45)"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="50.05 0" dur="2.5s" repeatCount="indefinite" calcMode="linear"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="10" xml:space="preserve" font-family="Consolas, monaco, 'Andale Mono', 'Ubuntu Mono', monospace" font-weight="bold" font-size="13"><tspan fill="#8a8a8a">made by </tspan><tspan fill="url(#rb)">wastefully</tspan><tspan fill="#8a8a8a"> with lots of </tspan><tspan fill="url(#rw)">love &lt;3</tspan></text>
+</svg>
